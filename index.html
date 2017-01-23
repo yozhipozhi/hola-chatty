@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chatty</title>
+		<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+	</head>
+	<body>
+
+		
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyC9VRDOmhrvRGc4FZvqzXMStahAb7wdyc8",
+		    databaseURL: "https://hola-chatty.firebaseio.com"
+		  };
+		  firebase.initializeApp(config);
+
+		  // Publish a message like this.
+		  firebase.database().ref('/messages').push({
+		  	user: 'cooluser', 
+		  	message: 'yolo'
+		  });
+		</script>
+	</body>
+</html>
