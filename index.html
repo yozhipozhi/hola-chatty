@@ -9,7 +9,7 @@
 	</head>
 	<body>
 
-		
+		<!-- Code goes here! -->
 		<script>
 		  // Initialize Firebase
 		  var config = {
@@ -18,11 +18,28 @@
 		  };
 		  firebase.initializeApp(config);
 
-		  // Publish a message like this.
-		  firebase.database().ref('/messages').push({
-		  	user: 'cooluser', 
-		  	message: 'yolo'
-		  });
+			/**
+			 * Sends a message to the Firebase message store.
+			 *
+			 * @param user The name of the user sending the message (string)
+			 * @param message The content of the message (string)
+			 */
+			function sendMessage(user, message) {
+				firebase.database().ref('/messages').push({
+			  	user: 'cooluser',
+			  	message: 'yolo'
+			  });
+			}
+
+			/**
+			 * Retrieves messages from Firebase .
+			 *
+			 * @param user The name of the user sending the message (string)
+			 * @param message The content of the message (string)
+			 */
+			function getMessages(callback) {
+
+			}
 		</script>
 	</body>
 </html>
