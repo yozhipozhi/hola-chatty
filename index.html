@@ -6,40 +6,42 @@
 		<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+		<script src="script.js"></script>
 	</head>
 	<body>
 
+		<!-- Chat log. -->
+		<textarea rows="30" cols="80" id="messages"></textarea>
+		<!-- Chat username and message input. -->
+		<form id="sendMessageForm">
+		  Username:<br>
+		  <input type="text" placeholder="Enter your username" id="usernameInput">
+			<input type="text" placeholder="Enter your message" id="messageInput">
+		  <input type="submit" value="Send">
+		</form>
+
 		<!-- Code goes here! -->
 		<script>
-		  // Initialize Firebase
-		  var config = {
-		    apiKey: "AIzaSyC9VRDOmhrvRGc4FZvqzXMStahAb7wdyc8",
-		    databaseURL: "https://hola-chatty.firebaseio.com"
-		  };
-		  firebase.initializeApp(config);
+			// Save a reference to username <input> tag.
+			var usernameInput = document.getElementById('usernameInput');
+			var messageInput = document.getElementById('messageInput');
+			var sendMessageForm = document.getElementById('sendMessageForm');
 
-			/**
-			 * Sends a message to the Firebase message store.
-			 *
-			 * @param user The name of the user sending the message (string)
-			 * @param message The content of the message (string)
-			 */
-			function sendMessage(user, message) {
-				firebase.database().ref('/messages').push({
-			  	user: 'cooluser',
-			  	message: 'yolo'
-			  });
-			}
+			// Bind form submission and send message to Firebase.
+			sendMessageForm.addEventListener('submit', function(e) {
+				// Suppress page reload.
+				e.preventDefault();
 
-			/**
-			 * Retrieves messages from Firebase .
-			 *
-			 * @param user The name of the user sending the message (string)
-			 * @param message The content of the message (string)
-			 */
-			function getMessages(callback) {
+				var username = usernameInput.value;
+				var message = messageInput.value;
+				sendMessage(username, message);
+			});
 
-			}
+			// Fetch all the messages from Firebase. Callback is called for *every*
+			// message in firebase from the past and also for every new message.
+			getMessages(function(username, message) {
+				console.log('message from ' + username + ' saying: ' + message);
+			});
 		</script>
 	</body>
 </html>
