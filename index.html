@@ -35,6 +35,9 @@
 				var username = usernameInput.value;
 				var message = messageInput.value;
 				sendMessage(username, message);
+
+				// Clear message input.
+				messageInput.value = '';
 			});
 
 			// Fetch all the messages from Firebase. Callback is called for *every*

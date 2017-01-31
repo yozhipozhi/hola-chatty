@@ -1,6 +1,6 @@
 # Chatty App
 
-Welcome to Chatty! This is a realtime web-based chat application that you can use to talk to all of your friends.
+Welcome to Chatty! This is a real-time web-based chat application that you can use to talk to all of your friends.
 
 ## Getting started
 
