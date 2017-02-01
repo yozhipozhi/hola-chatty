@@ -6,11 +6,15 @@ Welcome to Chatty! This is a real-time web-based chat application that you can u
 
 ### Running the app
 
-TODO(jheroy): add Cloud9 specific instructions.
+* Clone the hola-chatty project from `https://github.com/johnheroy/hola-chatty.git` into a new Cloud9 workspace
+* Open your new workspace
+* Double-click on `index.html`
+* Click Preview -> Live Preview File at the top of the window
+* Click the button in right pane next to "Browser" that says "pop out in new window"
 
 ### Debugging (Chrome developer tools)
 
-TODO(jheroy): add Cloud9 specific instructions for accessing console.
+* Once you have your `index.html` running in a new window, right click on the page and click "inspect element"
 
 ## Instructions
 
