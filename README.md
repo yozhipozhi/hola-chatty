@@ -29,7 +29,7 @@ messages in the provided `<textarea>`.
 
 1. Get the `<textarea>` in JavaScript using `document.getElementById`
 2. Add some "static" text to the text area using `.value`
-3. Update the `<textarea>` with every new message that comes in with the username and message
+3. Update the `<textarea>` with every new message that comes in with the username and message added together (concatenated) as a single string
 4. Add *all* the messages to the `<textarea>` by separating with a newline character `'\n'`
 
 ## Extra credit
