@@ -32,3 +32,29 @@ function getMessages(callback) {
     callback(val.user, val.message);
   });
 }
+
+
+var ALL_COLORS = ['blue', 'red', 'orange', 'violet'];
+var USER_COLORS = {};
+
+function getUserColor(username) {
+  var color = USER_COLORS[username];
+  if (color) {
+    return color;
+  }
+  // Assign new color.
+  color = ALL_COLORS[Object.keys(USER_COLORS).length];
+  USER_COLORS[username] = color;
+  return color;
+}
+
+function addMessageText(container, username, messageText) {
+  var line = document.createElement('span');
+  line.style.color = getUserColor(username);
+  var userSpan = document.createElement('span');
+  userSpan.appendChild(document.createTextNode(username + ': '));
+  line.appendChild(userSpan);
+  line.appendChild(document.createTextNode(messageText));
+  line.appendChild(document.createElement('br'));
+  container.appendChild(line);
+}
