@@ -11,7 +11,7 @@
 	<body>
 
 		<!-- Chat log. -->
-		<div id="messages" class="textarea" contenteditable></div><br/>
+		<textarea rows="30" cols="80" id="messages"></textarea>
 		<!-- Chat username and message input. -->
 		<form id="sendMessageForm">
 		  <input type="text" placeholder="Enter your username" id="usernameInput">
@@ -44,7 +44,7 @@
 			// message in firebase from the past and also for every new message.
 			getMessages(function(username, message) {
 				console.log('message from ' + username + ' saying: ' + message);
-				addMessageText(messagesArea, username, message);
+				messagesArea.value += username + ': ' + message + '\n';
 			});
 		</script>
 	</body>
