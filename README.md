@@ -37,12 +37,18 @@ messages in the provided `<textarea>`.
 
 In this exercise, we're going display our messages in a different color from the messages of our friends.
 
+### Getting in Style
+
 1. To add color, we're going to have move beyond the `<textarea>` tag (it only supports plain text).
 2. Instead we're going to create `<div>` that looks like a `<textarea>` but can hold pretty much anything inside it.
 3. So first let's delete the `<textarea>` tag and our code adding to the `.value` of the text area.
 4. Then replace it with a `<div>` tag that has the same ID as before and also has `contenteditable` inside the opening `<div>` tag.
 5. Reload the browser. There's nothing visible! Now add `class="textarea"` inside the open `<div>` tag.
 6. What happened? Look at `styles.css`.
+
+### Adding Structure
+
+1. To display messages, we're going to need to build HTML structure. 
 
 ## Extra credit
 

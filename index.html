@@ -11,8 +11,8 @@
 	<body>
 
 		<!-- Chat log. -->
-		<textarea rows="30" cols="80" id="messages"></textarea>
 		<!-- Chat username and message input. -->
+		<div id="messageInput" class="textarea" contenteditable></div> 
 		<form id="sendMessageForm">
 		  <input type="text" placeholder="Enter your username" id="usernameInput">
 			<input type="text" placeholder="Enter your message" id="messageInput">
@@ -25,7 +25,12 @@
 			var usernameInput = document.getElementById('usernameInput');
 			var messageInput = document.getElementById('messageInput');
 			var sendMessageForm = document.getElementById('sendMessageForm');
-			var messagesArea = document.getElementById('messages');
+			
+			var m = document.createElement("div");
+			messageInput.appendChild(m);
+			var txt = document.createTextNode("text");
+			m.appendChild(txt);
+			m.style.color = "red";
 
 			// Bind form submission and send message to Firebase.
 			sendMessageForm.addEventListener('submit', function(e) {
@@ -44,7 +49,7 @@
 			// message in firebase from the past and also for every new message.
 			getMessages(function(username, message) {
 				console.log('message from ' + username + ' saying: ' + message);
-				messagesArea.value += username + ': ' + message + '\n';
+				//messagesArea.value += username + ': ' + message + '\n';
 			});
 		</script>
 	</body>
