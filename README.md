@@ -2,7 +2,7 @@
 
 Welcome to Chatty! This is a real-time web-based chat application that you can use to talk to all of your friends.
 
-## Getting started
+## 1. Getting started
 
 ### Running the app
 
@@ -25,17 +25,27 @@ You can already send new messages to Firebase and see new messages from everyone
 else in the console, but it will be more convenient for most users to see
 messages in the provided `<textarea>`.
 
-**You are going to be editing `index.html`, dont' worry about changes anywhere else**
+**You are going to be editing `index.html`, don't worry about changes anywhere else**
 
 1. Get the `<textarea>` in JavaScript using `document.getElementById`
 2. Add some "static" text to the text area using `.value`
 3. Update the `<textarea>` with every new message that comes in with the username and message added together (concatenated) as a single string
 4. Add *all* the messages to the `<textarea>` by separating with a newline character `'\n'`
 
+
+## 2. Adding Color
+
+In this exercise, we're going display our messages in a different color from the messages of our friends.
+
+1. To add color, we're going to have move beyond the `<textarea>` tag (it only supports plain text).
+2. Instead we're going to create `<div>` that looks like a `<textarea>` but can hold pretty much anything inside it.
+3. So first let's delete the `<textarea>` tag and our code adding to the `.value` of the text area.
+4. Then replace it with a `<div>` tag that has the same ID as before and also has `contenteditable` inside the opening `<div>` tag.
+5. Reload the browser. There's nothing visible! Now add `class="textarea"` inside the open `<div>` tag.
+6. What happened? Look at `styles.css`.
+
 ## Extra credit
 
-- [ ] Change the color of your messages so you know which ones you sent versus
-your friends (see styles.css)
 - [ ] Add message timestamps so you can see *when* messages have been sent (bonus points for something more descriptive than purely a date and time but "10 minutes ago" or "1 day ago")
 
 ## Background reading
