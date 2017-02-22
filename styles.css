@@ -12,3 +12,11 @@
     resize: both;
     width: 400px;
 }
+
+.my-message {
+    color: blue;
+}
+
+.your-message {
+    color: red;
+}

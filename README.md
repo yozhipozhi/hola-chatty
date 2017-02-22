@@ -48,7 +48,24 @@ In this exercise, we're going display our messages in a different color from the
 
 ### Adding Structure
 
-1. To display messages, we're going to need to build HTML structure. 
+1. To display messages, we're going to need to build HTML structure. To do this,
+   we first create a new HTML node 
+2. Example: Create text node.
+3. Example: Create div with text node. Set the class.
+4. Make this into the following function and call it a couple times to test it.
+   ```javascript
+    var addChatMessage = function(chatBox, user, message, isMine) {
+        // TODO: Fill me in.
+        
+        // HINT:
+        chatLine.className = isMine ? 'my-message' : 'your-message';
+    };
+   ```
+5. Now move the call of `addChatMessage()` into `getMessages()` and reload.
+6. Now we need to figure out when a message is "mine" and when it is yours. In a 
+   real chat app, you would log in with a specific user name. Here, we're going
+   to compare it with the value of the usernameInput field.
+7. You'll notice that this only works 
 
 ## Extra credit
 

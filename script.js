@@ -33,6 +33,22 @@ function getMessages(callback) {
   });
 }
 
+/**
+ * Reloads all messages from Firebase.
+ *
+ * @param callback Callback function which takes a username and message
+ *     argument
+ */
+function reloadMessages(callback) {
+  messagesRef.once('value', function(data) {
+    var val = data.val();
+    for (var entry in val) {
+      var msg = val[entry];
+      callback(msg.user, msg.message);
+    }
+  });
+}
+
 // Make a string from Unicode code point.
 function stringFromCodePoint(codePoint) {
   var TEN_BITS = parseInt('1111111111', 2);
