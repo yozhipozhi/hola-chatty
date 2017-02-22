@@ -59,20 +59,20 @@
 				messageInput.value = '';
 			});
 
-			// Fetch all the messages from Firebase. Callback is called for *every*
-			// message in firebase from the past and also for every new message.
+			// Function to display a message from the username.
 			var messagesCallback = function(username, message) {
 				console.log('message from ' + username + ' saying: ' + message);
-				message = message.replace(':-)', EMOJI_SMILE);
-				addChatMessage(chatBox, username, message,
-							   username === usernameInput.value);
 			};
 			
+			// Fetch all the messages from Firebase. The messagesCallback is
+			// called for *every* message in firebase from the past and also for
+			// every new message.
 			getMessages(messagesCallback);
 			sendMessageForm.addEventListener('reset', function(e) {
 				// Suppress form clearing.
 				e.preventDefault();
 				
+				// Delete all current messages in chatBox.
 				while (chatBox.childElementCount > 0) {
 					chatBox.removeChild(chatBox.childNodes[0]);
 				}

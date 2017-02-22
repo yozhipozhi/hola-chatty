@@ -54,18 +54,21 @@ In this exercise, we're going display our messages in a different color from the
 3. Example: Create div with text node. Set the class.
 4. Make this into the following function and call it a couple times to test it.
    ```javascript
-    var addChatMessage = function(chatBox, user, message, isMine) {
+    function addChatMessage(chatBox, user, message, isMine) {
         // TODO: Fill me in.
         
         // HINT:
         chatLine.className = isMine ? 'my-message' : 'your-message';
-    };
+    }
    ```
 5. Now move the call of `addChatMessage()` into `getMessages()` and reload.
 6. Now we need to figure out when a message is "mine" and when it is yours. In a 
    real chat app, you would log in with a specific user name. Here, we're going
    to compare it with the value of the usernameInput field.
-7. You'll notice that this only works 
+7. You'll notice that this only works for new messages that you send and receive
+   after setting the username field. Why?
+8. Fortunately we have a "Login" button to simulate logging in. Click it and see
+   how the display changes. Try changing the username.
 
 ## Extra credit
 
